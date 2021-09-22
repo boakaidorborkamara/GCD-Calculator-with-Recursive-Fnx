@@ -10,36 +10,40 @@
     <h1>Recursive GCD Finder</h1>
     <p>Press Ctrl + Shift + I</p>
     <script>
+
+        // global variables 
+        let remainder = 1;
+
+            let longer = prompt("Width: ")
+            let shorter = prompt("Height: ");
+
+            // typecast input 
+            longer = parseInt(longer);
+            shorter = parseInt(shorter);
+
+            console.log("Initial Longer value: " + longer);
+            console.log("Initia Shorter value: " + shorter);
+
+        
+        //main
         function main(){
             //find gcd
             recursivelyCalculateGCD();
         }
         
-        
-        //find the GCD
+        //find the GCD recursively
         function recursivelyCalculateGCD(){
-
-            let remainder = 1;
-
-            let longer = 1425;
-            let shorter = 7;
-            console.log("Initial Longer value: " + longer);
-            console.log("Initia Shorter value: " + shorter);
-
-            
-
             if(longer > shorter){
                 // createdDottedSpaces();
                 // console.log("calculating.........")
                 remainder = longer % shorter;
-                console.log(`Remainder is now: ${remainder}`);
+                
 
-                if(remainder === 0)
+                if(remainder !== 0)
                 {
-                    console.log(`The GCD is in if statement: ${shorter}`)
-                }
-                else if(remainder !== 0)
-                {
+                    //display current user remainder
+                    console.log(`Remainder is now: ${remainder}`);
+                    // create spaces 
                     createdDottedSpaces();
 
                     // do swapping 
@@ -50,7 +54,14 @@
 
                     //divide again
                     remainder = longer % shorter;
-                    console.log(`Remainder is now: ${remainder}`);
+                    // console.log(`Remainder is now: ${remainder}`);
+
+                    //recursive function 
+                    recursivelyCalculateGCD();
+                }
+                else if(remainder === 0)
+                {
+                    console.log(`The GCD is: ${shorter}`);
                 }
 
                 
