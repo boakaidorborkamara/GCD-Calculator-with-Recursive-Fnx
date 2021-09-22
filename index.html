@@ -5,24 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recursive GCD Finder</title>
+
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 95vw;
+            height: 95vh;
+        }
+    </style>
 </head>
 <body>
-    <h1>Recursive GCD Finder</h1>
-    <p>Press Ctrl + Shift + I</p>
+    <div id="container">
+        <h1>Recursive GCD Finder</h1>
+        <p>Press Ctrl + Shift + I</p>
+    </div>
     <script>
 
         // global variables 
         let remainder = 1;
 
-            let longer = prompt("Width: ")
-            let shorter = prompt("Height: ");
+        let longer = prompt("Width: ")
+        let shorter = prompt("Height: ");
 
-            // typecast input 
-            longer = parseInt(longer);
-            shorter = parseInt(shorter);
+        // typecast input 
+        longer = parseInt(longer);
+        shorter = parseInt(shorter);
 
-            console.log("Initial Longer value: " + longer);
-            console.log("Initia Shorter value: " + shorter);
+        //print out initial values
+        console.log("Initial Longer value: " + longer);
+        console.log("Initia Shorter value: " + shorter);
 
         
         //main
