@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursive GCD Finder</title>
+</head>
+<body>
+    <h1>Recursive GCD Finder</h1>
+    <p>Press Ctrl + Shift + I</p>
+    <script>
+        function main(){
+            //find gcd
+            recursivelyCalculateGCD();
+        }
+        
+        
+        //find the GCD
+        function recursivelyCalculateGCD(){
+
+            let remainder = 1;
+
+            let longer = 1425;
+            let shorter = 7;
+            console.log("Initial Longer value: " + longer);
+            console.log("Initia Shorter value: " + shorter);
+
+            
+
+            if(longer > shorter){
+                // createdDottedSpaces();
+                // console.log("calculating.........")
+                remainder = longer % shorter;
+                console.log(`Remainder is now: ${remainder}`);
+
+                if(remainder === 0)
+                {
+                    console.log(`The GCD is in if statement: ${shorter}`)
+                }
+                else if(remainder !== 0)
+                {
+                    createdDottedSpaces();
+
+                    // do swapping 
+                    longer = shorter;
+                    console.log("Longer value is now: " + longer);
+                    shorter = remainder;
+                    console.log("Shoter value is now: " + shorter);
+
+                    //divide again
+                    remainder = longer % shorter;
+                    console.log(`Remainder is now: ${remainder}`);
+                }
+
+                
+            }
+        }
+
+        // create dotted spaces  
+        function createdDottedSpaces(){
+            let dot_counter = 2;
+            while(dot_counter > 0)
+            {
+                console.log("...............");
+                console.log("...............");
+                dot_counter--;
+            }
+        }
+
+        //envoke main function
+        main();
+    </script>
+</body>
+</html>
