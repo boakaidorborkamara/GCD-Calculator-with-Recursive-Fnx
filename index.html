@@ -66,6 +66,39 @@
 
                 
             }
+            else if(shorter > longer){
+                // createdDottedSpaces();
+                // console.log("calculating.........")
+                remainder = shorter % longer;
+                
+
+                if(remainder !== 0)
+                {
+                    //display current user remainder
+                    console.log(`Remainder is now: ${remainder}`);
+                    // create spaces 
+                    createdDottedSpaces();
+
+                    // do swapping 
+                    shorter = longer;
+                    console.log("Shorter value is now: " + shorter);
+                    longer = remainder;
+                    console.log("Longer value is now: " + longer);
+
+                    //divide again
+                    remainder = shorter % longer;
+                    // console.log(`Remainder is now: ${remainder}`);
+
+                    //recursive function 
+                    recursivelyCalculateGCD();
+                }
+                else if(remainder === 0)
+                {
+                    console.log(`The GCD is: ${longer}`);
+                }
+
+                
+            }
         }
 
         // create dotted spaces  
